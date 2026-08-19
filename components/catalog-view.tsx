@@ -16,9 +16,15 @@ export function CatalogView() {
 
   const categoria = searchParams.get("categoria") as CategoryId | null;
   const orden = (searchParams.get("orden") as SortOrder | null) ?? "asc";
+  const q = searchParams.get("q")?.trim().toLowerCase() ?? "";
 
   const filtered = products
     .filter((p) => !categoria || p.category === categoria)
+    .filter((p) => {
+      if (!q) return true;
+      const haystack = `${p.name} ${p.brand} ${Object.values(p.specs).join(" ")}`.toLowerCase();
+      return haystack.includes(q);
+    })
     .sort((a, b) => (orden === "asc" ? a.price - b.price : b.price - a.price));
 
   const activeCategory = categories.find((c) => c.id === categoria);
@@ -35,11 +41,12 @@ export function CatalogView() {
       <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-lg font-semibold text-[var(--text-primary)]">
-            {activeCategory ? activeCategory.label : "Catálogo"}
+            {q ? `Resultados: “${searchParams.get("q")}”` : activeCategory ? activeCategory.label : "Catálogo"}
           </h1>
           <p className="text-sm text-[var(--text-muted)]">
             {filtered.length} producto{filtered.length !== 1 ? "s" : ""}
-            {activeCategory ? ` en ${activeCategory.label.toLowerCase()}` : ""}
+            {activeCategory && !q ? ` en ${activeCategory.label.toLowerCase()}` : ""}
+            {q && filtered.length === 0 ? " — probá otro término" : ""}
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
@@ -88,7 +95,9 @@ export function CatalogView() {
 
       {filtered.length === 0 ? (
         <div className="rounded-xl border border-[var(--panel-border)] bg-[var(--panel)] p-8 text-center">
-          <p className="text-sm text-[var(--text-secondary)]">No hay productos en esta categoría.</p>
+          <p className="text-sm text-[var(--text-secondary)]">
+            {q ? "No encontramos productos para esa búsqueda." : "No hay productos en esta categoría."}
+          </p>
           <Link href="/catalogo" className="mt-3 inline-block text-sm text-[var(--accent)] hover:underline">
             Ver todo el catálogo
           </Link>
