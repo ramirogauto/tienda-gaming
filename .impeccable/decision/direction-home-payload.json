@@ -1,0 +1,138 @@
+{
+  "title": "Elegí el mundo visual — Home tienda-gaming",
+  "question": "El roll asignó Battlestation Editorial. Podés quedarte con esa dirección, elegir una alternativa o pedir re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Battlestation Editorial",
+      "kicker": "THE ROLL",
+      "lineage": "r/battlestations, setups RGB, reviews de hardware en escritorio",
+      "thesis": "La home es un cuarto gamer iluminado por el monitor: los destacados son piezas reales sobre el desk, no tiles genéricos.",
+      "palette": ["#0c0e12", "#161b22", "#22d3ee", "#f97316", "#e8eaed"],
+      "materials": ["desk matte", "monitor glow bloom", "RGB rim light", "spec sticker chips"],
+      "viewport": "Header oscuro compacto; hero ancho con 1–2 productos sobre escritorio RGB y precio en ARS; debajo grilla de destacados como 'piezas del setup' con foto, nombre, precio; rail de 3 categorías como zonas del desk.",
+      "risk": "Si las fotos son genéricas o el glow es decorativo, cae en plantilla gaming barata.",
+      "raised": [
+        {
+          "from": "challenger-developer-console",
+          "raise": "Nav y contenido separados por costura hairline de 1px, sin sombras pesadas — paneles que respiran como consola de trabajo."
+        },
+        {
+          "from": "challenger-sneaker-boxes",
+          "raise": "Cards de producto con gramática de etiqueta de caja: silueta/nombre arriba, chip de colorway por categoría, precio en cifras monoespaciadas."
+        },
+        {
+          "from": "challenger-starship-terminal",
+          "raise": "Categorías codificadas como stencils cortos (GPU / NB / PERIF) en el rail, no íconos genéricos."
+        }
+      ],
+      "comp": ".impeccable/mocks/decision/assigned.webp",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-phosphor-terminal-midnight-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/signals-instruments-phosphor-terminal-midnight.webp"
+    },
+    {
+      "id": "model-pick",
+      "label": "CompraGamer Oscuro Tech",
+      "kicker": "IMPECCABLE'S PICK",
+      "lineage": "CompraGamer, tiendas gaming AR dark mode",
+      "thesis": "Oscuro tech con producto protagonista: la referencia que el cliente ya pidió, ejecutada con craft real.",
+      "palette": ["#0a0a0f", "#14141f", "#00ff88", "#ffffff", "#ff4444"],
+      "materials": ["product cutout", "neon accent CTA", "spec badge pills", "dark card glass"],
+      "viewport": "Hero con carrusel de ofertas sobre fondo negro; grilla de cards con imagen grande, precio verde/neon, CTA 'Agregar'; categorías como chips horizontales bajo el header.",
+      "risk": "Es donde aterrizan la mayoría de las tiendas gaming — familiar y efectivo, pero poco distintivo si no se eleva el craft.",
+      "comp": ".impeccable/mocks/decision/model-pick.webp"
+    },
+    {
+      "id": "challenger-developer-console",
+      "label": "Consola Dark-First",
+      "verdict": "competitive",
+      "lineage": "paneles dev console, syntax accents",
+      "thesis": "Superficie de trabajo oscura con paneles persistentes: categorías en rail, productos en panel principal.",
+      "palette": ["#1e1e1e", "#252526", "#569cd6", "#ce9178", "#d4d4d4"],
+      "materials": ["hairline seams", "panel elevation", "syntax state colors"],
+      "viewport": "Layout de paneles: rail izquierdo categorías, panel central grilla de productos, header con búsqueda y carrito.",
+      "case": "Fuse limpio para Operate: navegación persistente y estados claros; pierde por poco en identificación emocional gamer.",
+      "risk": "Puede sentirse herramienta dev si los productos no tienen fotografía protagonista.",
+      "comp": ".impeccable/mocks/decision/challenger-developer-console.webp",
+      "hero": "https://impeccable.style/worlds/cards/digital-design-canon-dark-first-developer-console-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/digital-design-canon-dark-first-developer-console.webp"
+    },
+    {
+      "id": "challenger-sneaker-boxes",
+      "label": "Muro de Cajas",
+      "verdict": "competitive",
+      "lineage": "archivo sneaker, cajas apiladas con etiqueta lateral",
+      "thesis": "Cada producto es una caja en el muro: la etiqueta lateral lleva nombre, colorway y precio.",
+      "palette": ["#c45c26", "#1a1a1a", "#f5f0e8", "#ffffff"],
+      "materials": ["cardboard texture", "silhouette line art", "tissue white interior"],
+      "viewport": "Muro de cajas apiladas; tap selecciona y la tapa se abre mostrando producto; categorías como stacks distintos.",
+      "case": "Cultura hype/coleccionismo cruza con gamers; pierde vs fotos reales para confianza en hardware caro.",
+      "risk": "Metáfora de caja funciona menos para GPUs que para sneakers.",
+      "comp": ".impeccable/mocks/decision/challenger-sneaker-boxes.webp",
+      "hero": "https://impeccable.style/worlds/cards/textiles-weave-drape-fashion-sneaker-box-stacks-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/textiles-weave-drape-fashion-sneaker-box-stacks.webp"
+    },
+    {
+      "id": "challenger-starship-terminal",
+      "label": "Terminal Nave",
+      "verdict": "declined",
+      "lineage": "terminales sci-fi industrial",
+      "palette": ["#0a0f0a", "#33ff33", "#ffaa00", "#cccccc"],
+      "materials": ["phosphor CRT", "stencil plates", "hazard stripes"],
+      "case": "Demasiado roleplay: el comprador argentino no se identifica con una nave, y las fotos de producto pierden protagonismo.",
+      "kept": "Códigos stencil cortos para nombrar categorías sin íconos stock.",
+      "hero": "https://impeccable.style/worlds/cards/pop-culture-shelf-industrial-starship-terminal-hero.webp"
+    },
+    {
+      "id": "challenger-hypercard",
+      "label": "Stack HyperCard",
+      "verdict": "declined",
+      "lineage": "HyperCard shoebox, Mac OS clásico",
+      "palette": ["#000000", "#ffffff", "#808080"],
+      "materials": ["1-bit dither", "hand-drawn borders", "Chicago menus"],
+      "case": "Retro-nostalgia no sostiene confianza comercial para un MVP de aprobación cliente.",
+      "kept": "Botones pintados y visibles como saltos directos entre categorías y destacados.",
+      "hero": "https://impeccable.style/worlds/cards/medium-native-hypercard-stack-shoebox-hero.webp"
+    },
+    {
+      "id": "challenger-phosphor",
+      "label": "Terminal Fósforo",
+      "verdict": "declined",
+      "lineage": "terminales green phosphor",
+      "palette": ["#0a0f0a", "#33ff66", "#1a331a"],
+      "materials": ["scanline glow", "monospace bitmap", "phosphor bloom"],
+      "case": "Una home de productos no puede ser solo texto monospace; las imágenes son el trabajo principal.",
+      "kept": "Cifras de precio en monoespaciado alineado para escaneo rápido.",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-phosphor-terminal-midnight-hero.webp"
+    },
+    {
+      "id": "challenger-iridescent",
+      "label": "Borde Iridiscente",
+      "verdict": "declined",
+      "lineage": "nubes iridiscentes, difracción",
+      "palette": ["#f8f8fc", "#6b7280", "#a7f3d0", "#fda4af", "#c4b5fd"],
+      "materials": ["cloud white ground", "spectral edge bands", "thin humanist sans"],
+      "case": "Demasiado etéreo para e-commerce gaming oscuro; contradice referencias CompraGamer.",
+      "kept": "Banda iridiscente solo en el borde del hero promo, nunca en el campo de lectura de precios.",
+      "hero": "https://impeccable.style/worlds/cards/clouds-storms-auroras-iridescent-cloud-edge-hero.webp"
+    }
+  ],
+  "reroll": {
+    "registers": ["safer", "bolder"]
+  },
+  "buildPath": {
+    "value": "comp",
+    "toggle": true
+  },
+  "canon": true,
+  "canonCard": {
+    "label": "Estándar de categoría",
+    "thesis": "E-commerce gaming oscuro tipo CompraGamer + claridad Mercado Libre — lo que el visitante ya espera, ejecutado impecable.",
+    "palette": ["#0d0d0d", "#1a1a2e", "#00cc66", "#ffffff", "#3483fa"],
+    "materials": ["product photography", "card grid", "price badge", "trust microcopy"],
+    "viewport": "Header con logo, búsqueda, carrito; hero carrusel; grilla 2–4 cols de cards con imagen, título, precio ARS, CTA; footer confianza.",
+    "risk": "Indistinguible de la competencia por diseño — es el trade consciente del estándar.",
+    "comp": ".impeccable/mocks/decision/canon.webp"
+  },
+  "steer": true
+}
