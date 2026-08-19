@@ -1,17 +1,13 @@
-import Link from "next/link";
-import { SiteHeader } from "@/components/site-header";
+import { CartView } from "@/components/cart-view";
+import { StoreShell } from "@/components/store-shell";
 
 export default function CarritoPage() {
   return (
-    <div className="min-h-full bg-[var(--ground)]">
-      <SiteHeader cartCount={2} />
-      <main className="mx-auto max-w-2xl px-4 py-16 text-center">
-        <h1 className="text-xl font-semibold text-[var(--text-primary)]">Carrito</h1>
-        <p className="mt-2 text-sm text-[var(--text-muted)]">Pantalla en construcción — MVP demo</p>
-        <Link href="/" className="mt-6 inline-block text-sm text-[var(--accent)] hover:underline">
-          ← Volver al inicio
-        </Link>
-      </main>
-    </div>
+    <StoreShell showTrustBar={false}>
+      <div className="p-4 lg:p-6">
+        <h1 className="mb-6 text-lg font-semibold text-[var(--text-primary)]">Carrito</h1>
+        <CartView />
+      </div>
+    </StoreShell>
   );
 }

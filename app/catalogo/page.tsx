@@ -1,17 +1,26 @@
-import Link from "next/link";
-import { SiteHeader } from "@/components/site-header";
+import { Suspense } from "react";
+import { CatalogView } from "@/components/catalog-view";
+import { StoreShell } from "@/components/store-shell";
 
 export default function CatalogoPage() {
   return (
-    <div className="min-h-full bg-[var(--ground)]">
-      <SiteHeader />
-      <main className="mx-auto max-w-2xl px-4 py-16 text-center">
-        <h1 className="text-xl font-semibold text-[var(--text-primary)]">Catálogo</h1>
-        <p className="mt-2 text-sm text-[var(--text-muted)]">Pantalla en construcción — MVP demo</p>
-        <Link href="/" className="mt-6 inline-block text-sm text-[var(--accent)] hover:underline">
-          ← Volver al inicio
-        </Link>
-      </main>
+    <StoreShell>
+      <Suspense fallback={<CatalogSkeleton />}>
+        <CatalogView />
+      </Suspense>
+    </StoreShell>
+  );
+}
+
+function CatalogSkeleton() {
+  return (
+    <div className="p-4 lg:p-6">
+      <div className="mb-4 h-8 w-48 animate-pulse rounded bg-[var(--panel)]" />
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-4">
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div key={i} className="aspect-[3/4] animate-pulse rounded-xl bg-[var(--panel)]" />
+        ))}
+      </div>
     </div>
   );
 }

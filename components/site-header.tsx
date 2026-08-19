@@ -1,10 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import { useCart } from "@/components/cart-provider";
 
-type SiteHeaderProps = {
-  cartCount?: number;
-};
+export function SiteHeader() {
+  const { count } = useCart();
 
-export function SiteHeader({ cartCount = 2 }: SiteHeaderProps) {
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--panel-border)] bg-[var(--panel)]">
       <div className="mx-auto flex h-14 max-w-[1400px] items-center gap-4 px-4 lg:px-6">
@@ -44,6 +45,12 @@ export function SiteHeader({ cartCount = 2 }: SiteHeaderProps) {
 
         <div className="flex shrink-0 items-center gap-2">
           <Link
+            href="/admin"
+            className="hidden rounded-md px-3 py-1.5 text-sm text-[var(--text-muted)] transition-colors hover:bg-[var(--ground)] hover:text-[var(--text-primary)] md:block"
+          >
+            Admin
+          </Link>
+          <Link
             href="/login"
             className="hidden rounded-md px-3 py-1.5 text-sm text-[var(--text-secondary)] transition-colors hover:bg-[var(--ground)] hover:text-[var(--text-primary)] sm:block"
           >
@@ -57,9 +64,9 @@ export function SiteHeader({ cartCount = 2 }: SiteHeaderProps) {
               <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
             </svg>
             <span className="hidden sm:inline">Carrito</span>
-            {cartCount > 0 && (
+            {count > 0 && (
               <span className="absolute -right-1.5 -top-1.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-[var(--accent)] px-1 text-[10px] font-semibold text-white">
-                {cartCount}
+                {count}
               </span>
             )}
           </Link>
